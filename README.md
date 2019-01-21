@@ -1,22 +1,20 @@
 # My Flutter Challenges
 
-A new Flutter project containing all my flutter UI challenges
+A new Flutter project containing all my flutter UI challenges. 
 
-# Login
+Youtube playlist about Flutter: https://www.youtube.com/playlist?list=PLum90SMJW-vltQ_ERf3rhjq_UZWJ2enEG
 
-<img src="/screenshots/login.png" width="270" height="480">
+#### :heart: Star :heart: the repo to support the project or :smile:[Follow Me](https://github.com/pedromassango).Thanks!
+[![Twitter Follow](https://img.shields.io/twitter/follow/pedromassangom.svg?style=social&label=Follow)](https://twitter.com/pedromassangom)
 
-# Profile
+| Login | Profile |
+| ----- | ------- |
+| <img src="/screenshots/login.png" width="270" height="480"> | <img src="/screenshots/profile.png" width="270" height="480">|
 
-<img src="/screenshots/profile.png" width="270" height="480">
+| Custom Drawer | Home screen |
+| ------------- | ------------|
+| <img src="/screenshots/delivery.png" width="270" height="480"> | <img src="/screenshots/home.png" width="270" height="480">|
 
-# Drawer
-
-<img src="/screenshots/delivery.png" width="270" height="480">
-
-# Home screen
-
-<img src="/screenshots/home.png" width="270" height="480">
 
 ## Getting Started
 
