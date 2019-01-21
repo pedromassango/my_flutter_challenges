@@ -57,13 +57,17 @@ class HomePageState extends State<HomePage>
           borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(190),
               bottomRight: Radius.circular(190))),
-      child: Stack(
-        children: <Widget>[
+    );
+  }
 
-          Align(
-            alignment: Alignment.center,
+  Widget _buildLoginWidgetsx() {
+    return Column(
+        children: <Widget>[
+          AnimatedOpacity(
+            opacity: !isLogin ? 0.0 : 1.0,
+            duration: animationDuration,
             child: Padding(
-              padding: const EdgeInsets.only(left: 42, right: 42),
+              padding: const EdgeInsets.only(left: 42, right: 42, top: 32),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
@@ -78,16 +82,18 @@ class HomePageState extends State<HomePage>
                             borderRadius: BorderRadius.all(Radius.circular(32)))),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(bottom: 16, top: 16),
+                    padding: const EdgeInsets.only(top: 16),
                     child: TextField(
                       style: TextStyle(color: Colors.white, height: 0.5),
                       decoration: InputDecoration(
                           prefixIcon: Icon(Icons.vpn_key),
                           hintText: 'Password',
                           border: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(Radius.circular(32)))),
+                              borderRadius: BorderRadius.all(
+                                  Radius.circular(32)))),
                     ),
                   ),
+
                 ],
               ),
             ),
@@ -139,7 +145,6 @@ class HomePageState extends State<HomePage>
               ),
           ),
         ],
-      ),
     );
   }
 
@@ -262,6 +267,14 @@ class HomePageState extends State<HomePage>
             builder: (context, child) {
               return _buildLoginWidgets();
             },
+          ),
+          Align(
+            alignment: Alignment.topCenter,
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: loginSize.value,
+                  child: Center(child: _buildLoginWidgetsx()),
+              )
           )
         ],
       ),
