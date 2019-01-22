@@ -114,6 +114,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     child: TextField(
                       decoration: InputDecoration(
+                        border: InputBorder.none,
                         icon: Icon(Icons.email,
                             color: Colors.grey,
                         ),
@@ -142,6 +143,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     child: TextField(
                       decoration: InputDecoration(
+                        border: InputBorder.none,
                         icon: Icon(Icons.vpn_key,
                           color: Colors.grey,
                         ),
