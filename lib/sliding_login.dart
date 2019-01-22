@@ -26,7 +26,7 @@ class HomePageState extends State<HomePage>
   Animation<double> loginSize;
   AnimationController loginController;
   AnimatedOpacity opacityAnimation;
-  Duration animationDuration = Duration(milliseconds: 250);
+  Duration animationDuration = Duration(milliseconds: 270);
 
   @override
   void initState() {
@@ -57,78 +57,70 @@ class HomePageState extends State<HomePage>
           borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(190),
               bottomRight: Radius.circular(190))),
+      child: Align(
+        alignment: Alignment.bottomCenter,
+        child: AnimatedOpacity(
+          opacity: loginController.value,
+          duration: animationDuration,
+          child: GestureDetector(
+            onTap: isLogin ? null : () {
+              loginController.reverse();
+
+              setState(() {
+                isLogin = !isLogin;
+              });
+            },
+            child: Container(
+              child: Text(
+                'LOG IN'.toUpperCase(),
+                style: TextStyle(
+                    fontSize: 32,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 
-  Widget _buildLoginWidgetsx() {
+  Widget _buildLoginComponents() {
     return Column(
-        children: <Widget>[
-          AnimatedOpacity(
-            opacity: !isLogin ? 0.0 : 1.0,
-            duration: animationDuration,
-            child: Padding(
-              padding: const EdgeInsets.only(left: 42, right: 42, top: 32),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  TextField(
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        Visibility(
+          visible: isLogin,
+          child: Padding(
+            padding: const EdgeInsets.only(left: 42, right: 42),
+            child: Column(
+              children: <Widget>[
+                TextField(
+                  style: TextStyle(color: Colors.white, height: 0.5),
+                  decoration: InputDecoration(
+                      prefixIcon: Icon(Icons.email),
+                      hintText: 'Email',
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(32))
+                      )
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 16),
+                  child: TextField(
                     style: TextStyle(color: Colors.white, height: 0.5),
                     decoration: InputDecoration(
-                        prefixIcon: Icon(
-                          Icons.email,
-                        ),
-                        hintText: 'Email',
+                        prefixIcon: Icon(Icons.vpn_key),
+                        hintText: 'Password',
                         border: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(32)))),
+                            borderRadius: BorderRadius.all(
+                                Radius.circular(32)))),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 16),
-                    child: TextField(
-                      style: TextStyle(color: Colors.white, height: 0.5),
-                      decoration: InputDecoration(
-                          prefixIcon: Icon(Icons.vpn_key),
-                          hintText: 'Password',
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(
-                                  Radius.circular(32)))),
-                    ),
-                  ),
-
-                ],
-              ),
-            ),
-          ),
-
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: AnimatedOpacity(
-              opacity: isLogin ? 0.0 : 1.0,
-              duration: animationDuration,
-              child: GestureDetector(
-                onTap: () {
-                  loginController.reverse();
-
-                  setState(() {
-                    isLogin = !isLogin;
-                  });
-                },
-                child: Text(
-                  'LOG IN'.toUpperCase(),
-                  style: TextStyle(
-                      fontSize: 32,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
                 ),
-              ),
-            ),
-          ),
-          Align(
-              alignment: Alignment.bottomCenter,
-              child: Visibility(
-                visible: isLogin,
-                child: Container(
+                Container(
                   width: 200,
                   height: 40,
+                  margin: EdgeInsets.only(top: 32),
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.all(Radius.circular(50))
@@ -137,18 +129,21 @@ class HomePageState extends State<HomePage>
                     child: Text(
                       'LOG IN',
                       style: TextStyle(color: Color(0XFF2a3ed7),
-                        fontWeight: FontWeight.bold
+                          fontWeight: FontWeight.bold
                       ),
                     ),
                   ),
-                ),
-              ),
+                )
+              ],
+            ),
           ),
-        ],
+        ),
+
+      ],
     );
   }
 
-  Widget _buildRegisterWidgets() {
+  Widget _buildRegistercomponents() {
     return Padding(
       padding: EdgeInsets.only(
         left: 42,
@@ -199,16 +194,24 @@ class HomePageState extends State<HomePage>
                     borderRadius: BorderRadius.all(Radius.circular(32)))),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 32),
-            child: MaterialButton(
-              minWidth: 200,
-              color: Color(0XFF2a3ed7),
-              onPressed: () {},
-              child: Text(
-                'SIGN UP',
-                style: TextStyle(color: Colors.white),
+            padding: const EdgeInsets.only(top: 24),
+            child: Container(
+              width: 200,
+              height: 40,
+              margin: EdgeInsets.only(top: 32),
+              decoration: BoxDecoration(
+                  color: Color(0XFF2a3ed7),
+                  borderRadius: BorderRadius.all(Radius.circular(50))
               ),
-            ),
+              child: Center(
+                child: Text(
+                  'SIGN UP',
+                  style: TextStyle(color: Colors.white,
+                      fontWeight: FontWeight.bold
+                  ),
+                ),
+              ),
+    ) ,
           )
         ],
       ),
@@ -231,12 +234,13 @@ class HomePageState extends State<HomePage>
             child: AnimatedOpacity(
               opacity: isLogin ? 0.0 : 1.0,
               duration: animationDuration,
-                child: Container(child: _buildRegisterWidgets()),
+                child: Container(child: _buildRegistercomponents()),
             ),
           ),
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
+              color: isLogin && !loginController.isAnimating ? Colors.white : Colors.transparent,
               width: MediaQuery.of(context).size.width,
               height: _defaultLoginSize/1.5,
               child: Visibility(
@@ -272,8 +276,8 @@ class HomePageState extends State<HomePage>
             alignment: Alignment.topCenter,
               child: Container(
                 width: MediaQuery.of(context).size.width,
-                height: loginSize.value,
-                  child: Center(child: _buildLoginWidgetsx()),
+                height: MediaQuery.of(context).size.height/2,
+                  child: Center(child: _buildLoginComponents()),
               )
           )
         ],
