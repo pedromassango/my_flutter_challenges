@@ -18,6 +18,11 @@ Youtube playlist about Flutter: https://www.youtube.com/playlist?list=PLum90SMJW
 | <img src="/screenshots/delivery.png" width="270" height="480"> | <img src="/screenshots/home.png" width="270" height="480">|
 
 
+| Sliding Login & Register |
+| ------------- |
+| <img src="/screenshots/sliding_login.png" width="270" height="480"> |
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
