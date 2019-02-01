@@ -15,7 +15,7 @@ Youtube playlist about Flutter: https://www.youtube.com/playlist?list=PLum90SMJW
 
 | Custom Drawer | Home screen |
 | ------------- | ------------|
-| <img src="/screenshots/delivery.png" width="270" height="480"> | <img src="/screenshots/home.png" width="270" height="480">|
+| <img src="/screenshots/delivery.gif" width="270" height="480"> | <img src="/screenshots/home.png" width="270" height="480">|
 
 
 | Sliding Login & Register | Bottom Navy Bar |
