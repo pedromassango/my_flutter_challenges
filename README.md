@@ -20,7 +20,7 @@ Youtube playlist about Flutter: https://www.youtube.com/playlist?list=PLum90SMJW
 
 | Sliding Login & Register | Bottom Navy Bar |
 | ------------- | ------------- |
-| <img src="/screenshots/sliding_login.png" width="270" height="480"> | <img src="/screenshots/navy2.gif" width="270" height="480"> |
+| <img src="/screenshots/slidl.gif" width="270" height="480"> | <img src="/screenshots/navy2.gif" width="270" height="480"> |
 
 
 ## Getting Started
