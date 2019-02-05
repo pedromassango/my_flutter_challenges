@@ -56,8 +56,8 @@ class _MyHomePageState extends State<MyHomePage> {
             decoration: BoxDecoration(
               color: green,
               borderRadius: BorderRadius.only(
-                bottomRight: Radius.circular(16),
-                bottomLeft: Radius.circular(16)
+                bottomRight: Radius.circular(32),
+                bottomLeft: Radius.circular(32)
               ),
             ),
             child: Column(
@@ -82,11 +82,16 @@ class _MyHomePageState extends State<MyHomePage> {
                         ],
                       ),
                     ),
-
-                    Image(
+                    Container(
                       width: 120,
                       height: 120,
-                      image: NetworkImage(url),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                          fit: BoxFit.fill,
+                          image: NetworkImage(url)
+                        )
+                      ),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 16),
@@ -107,10 +112,15 @@ class _MyHomePageState extends State<MyHomePage> {
                     )
                   ],
                 ),
-                Text("ID: 14552566",
-                style: TextStyle(
-                  color: Colors.white70
-                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    top: 10
+                  ),
+                  child: Text("ID: 14552566",
+                  style: TextStyle(
+                    color: Colors.white70
+                  ),
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 16, bottom: 32),
