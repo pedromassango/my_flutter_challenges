@@ -20,17 +20,42 @@ class HomePage extends StatefulWidget {
   }
 }
 
-class HomePageState extends State<HomePage> {
-
+class HomePageState extends State<HomePage>
+    with SingleTickerProviderStateMixin {
   int _index = 0;
+  TabController _controller;
+
+  List<String> pages = [
+    'Page One',
+    'Page Two',
+    'Page Three',
+    'Page Four',
+  ];
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = TabController(
+        vsync: this,
+        length: pages.length,
+      initialIndex: _index
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text('${_index+1}', textAlign: TextAlign.center, style: TextStyle(
-            fontSize: 52
-        ),),
+      body: TabBarView(
+        controller: _controller,
+        children: pages.map((title) {
+          return Center(
+            child: Text(
+              '$title',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 52),
+            ),
+          );
+        }).toList(),
       ),
       appBar: AppBar(
         elevation: 1,
@@ -43,9 +68,10 @@ class HomePageState extends State<HomePage> {
         ],
       ),
       bottomNavigationBar: BottomNavyBar(
-        onItemSelected: (index){
+        onItemSelected: (index) {
           setState(() {
             _index = index;
+            _controller.animateTo(_index);
           });
         },
         items: [
@@ -68,16 +94,16 @@ class BottomNavyBar extends StatefulWidget {
   final List<BottomNavyBarItem> items;
   final ValueChanged<int> onItemSelected;
 
-  const BottomNavyBar({
-    Key key,
-    this.currentIndex = 0,
-    this.iconSize = 24,
-    this.activeColor,
-    this.inactiveColor,
-    this.backgroundColor,
-    @required this.items,
-    @required this.onItemSelected
-  }) : super(key: key);
+  const BottomNavyBar(
+      {Key key,
+      this.currentIndex = 0,
+      this.iconSize = 24,
+      this.activeColor,
+      this.inactiveColor,
+      this.backgroundColor,
+      @required this.items,
+      @required this.onItemSelected})
+      : super(key: key);
 
   @override
   State<StatefulWidget> createState() {
@@ -88,8 +114,7 @@ class BottomNavyBar extends StatefulWidget {
         iconSize: iconSize,
         activeColor: activeColor,
         inactiveColor: inactiveColor,
-        onItemSelected: onItemSelected
-    );
+        onItemSelected: onItemSelected);
   }
 }
 
@@ -105,12 +130,12 @@ class BottomNavyBarState extends State<BottomNavyBar> {
 
   BottomNavyBarState(
       {@required this.items,
-        this.currentIndex,
-        this.activeColor,
-        this.inactiveColor = Colors.black,
-        this.backgroundColor,
-        this.iconSize,
-        @required this.onItemSelected}){
+      this.currentIndex,
+      this.activeColor,
+      this.inactiveColor = Colors.black,
+      this.backgroundColor,
+      this.iconSize,
+      @required this.onItemSelected}) {
     _selectedIndex = currentIndex;
   }
 
@@ -123,9 +148,9 @@ class BottomNavyBarState extends State<BottomNavyBar> {
       decoration: !isSelected
           ? null
           : BoxDecoration(
-        color: activeColor,
-        borderRadius: BorderRadius.all(Radius.circular(50)),
-      ),
+              color: activeColor,
+              borderRadius: BorderRadius.all(Radius.circular(50)),
+            ),
       child: ListView(
         shrinkWrap: true,
         padding: EdgeInsets.all(0),
@@ -147,8 +172,8 @@ class BottomNavyBarState extends State<BottomNavyBar> {
               ),
               isSelected
                   ? DefaultTextStyle.merge(
-                  style: TextStyle(color: backgroundColor),
-                  child: item.title)
+                      style: TextStyle(color: backgroundColor),
+                      child: item.title)
                   : SizedBox.shrink()
             ],
           )
@@ -159,9 +184,8 @@ class BottomNavyBarState extends State<BottomNavyBar> {
 
   @override
   Widget build(BuildContext context) {
-    activeColor = (activeColor == null)
-        ? Theme.of(context).accentColor
-        : activeColor;
+    activeColor =
+        (activeColor == null) ? Theme.of(context).accentColor : activeColor;
 
     backgroundColor = (backgroundColor == null)
         ? Theme.of(context).bottomAppBarColor
@@ -170,7 +194,7 @@ class BottomNavyBarState extends State<BottomNavyBar> {
     return Container(
       width: MediaQuery.of(context).size.width,
       height: 56,
-      padding: EdgeInsets.only(left: 8, right: 8, top: 6,bottom: 6),
+      padding: EdgeInsets.only(left: 8, right: 8, top: 6, bottom: 6),
       decoration: BoxDecoration(
           color: backgroundColor,
           boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 2)]),
