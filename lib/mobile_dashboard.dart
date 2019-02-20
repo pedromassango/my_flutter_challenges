@@ -155,7 +155,7 @@ class _HomePageState extends State<HomePage> {
       margin: EdgeInsets.only(left: 32, right: 32, top: 2, bottom: 2),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.all(Radius.circular(32)),
+        borderRadius: BorderRadius.all(Radius.circular(16)),
         boxShadow: [
           BoxShadow(
             color: Colors.black12,
