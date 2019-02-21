@@ -27,21 +27,6 @@ class HomePage extends StatefulWidget {
 
 class HomePageState extends State<HomePage> {
 
-
-  Widget _buildHeaderWidgets() {
-    return Container(
-      margin: EdgeInsets.only(top: 42),
-      padding: EdgeInsets.only(left: 16, right: 16),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          Text("GameCoin"),
-          Text('SKIP')
-        ],
-      ),
-    );
-  }
-
   @override
   void initState() {
     SystemChrome.setEnabledSystemUIOverlays([]);
@@ -53,9 +38,8 @@ class HomePageState extends State<HomePage> {
     return Scaffold(
       body: Stack(
         children: <Widget>[
-          CustomContainer(),
-
-          _buildHeaderWidgets(),
+          CustomContainer( Colors.purple),
+          //CustomContainer( Colors.orange),
 
         ],
       ),
@@ -66,6 +50,10 @@ class HomePageState extends State<HomePage> {
 
 class CustomContainer extends StatefulWidget{
 
+final Color color;
+
+CustomContainer(this.color);
+
   @override
   State<StatefulWidget> createState() {
     return CustomContainerState();
@@ -74,15 +62,17 @@ class CustomContainer extends StatefulWidget{
 
 class CustomContainerState extends State<CustomContainer>{
 
+double dragPercent = 30;
+
   @override
   Widget build(BuildContext context) {
     return ClipPath(
-      clipper: MyClipper(),
+      clipper: MyClipper(dragPercent),
       child: GestureDetector(
         child: Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
-          color: Colors.red,
+          color: widget.color,
         ),
       ),
     );
@@ -92,36 +82,19 @@ class CustomContainerState extends State<CustomContainer>{
 
 class MyClipper extends CustomClipper<Path> {
 
+  final double dragPercent;
+
+  MyClipper(this.dragPercent);
+
   @override
   Path getClip(Size size) {
     var path = Path();
 
     // colored background
-//    path.addRect(
-//        Rect.fromLTRB(0, size.height, size.width-4, 0)
-//    );
+    path.addRect(
+        Rect.fromLTRB(size.width-dragPercent, size.height, size.width, 0)
+    );
     
-    // swipe button area button
-//
-//    path.addRRect(
-//        RRect.fromLTRBAndCorners(size.width, size.height-200, size.width-50, size.height-270,
-//          topLeft: Radius.circular(50),
-//          bottomLeft: Radius.circular(50)
-//    )
-//    );
-
-    //path.quadraticBezierTo(0, size.height-200, size.height-200, size.height-200);
-/*
-    path.addOval(Rect.fromCircle(
-        center: Offset(size.width, size.height-200),
-        radius: 40
-    )
-    );*/
-
-    path.lineTo(size.width, size.height);
-    path.lineTo(size.height, size.width);
-
-
     return path;
   }
 
