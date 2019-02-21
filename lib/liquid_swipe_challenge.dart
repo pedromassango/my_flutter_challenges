@@ -4,21 +4,17 @@ import 'package:flutter/services.dart';
 void main() => runApp(LiquidApp());
 
 class LiquidApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Liquid Swipe',
-      theme: ThemeData(
-        primarySwatch: Colors.red
-      ),
+      theme: ThemeData(primarySwatch: Colors.red),
       home: HomePage(),
     );
   }
 }
 
 class HomePage extends StatefulWidget {
-
   @override
   State<StatefulWidget> createState() {
     return HomePageState();
@@ -26,7 +22,6 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
-
   @override
   void initState() {
     SystemChrome.setEnabledSystemUIOverlays([]);
@@ -38,21 +33,19 @@ class HomePageState extends State<HomePage> {
     return Scaffold(
       body: Stack(
         children: <Widget>[
-          CustomContainer( Colors.purple),
+          CustomContainer(Colors.purple, MediaQuery.of(context).size),
           //CustomContainer( Colors.orange),
-
         ],
       ),
     );
   }
-
 }
 
-class CustomContainer extends StatefulWidget{
+class CustomContainer extends StatefulWidget {
+  final Color color;
+  final Size mSize;
 
-final Color color;
-
-CustomContainer(this.color);
+  CustomContainer(this.color, this.mSize);
 
   @override
   State<StatefulWidget> createState() {
@@ -60,31 +53,89 @@ CustomContainer(this.color);
   }
 }
 
-class CustomContainerState extends State<CustomContainer>{
+class CustomContainerState
+    extends State<CustomContainer>
+    with SingleTickerProviderStateMixin {
 
-double dragPercent = 30;
+  Animation<double> animation;
+  AnimationController controller;
+  double sliderPercent = 30;
+  double startDragPercent;
+  double startDragX;
+
+  @override
+  void initState() {
+    super.initState();
+
+    controller = AnimationController(
+        vsync: this,
+        duration: Duration(milliseconds: 700)
+    );
+
+  }
 
   @override
   Widget build(BuildContext context) {
-    return ClipPath(
-      clipper: MyClipper(dragPercent),
-      child: GestureDetector(
-        child: Container(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
-          color: widget.color,
-        ),
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
+
+    animation = Tween<double>(
+        begin: sliderPercent,
+        end: width
+    ).animate(
+        CurvedAnimation(parent: controller, curve: Curves.linear)
+    );
+
+    return GestureDetector(
+      onHorizontalDragStart: _horizontalDragStart,
+      onHorizontalDragUpdate: _horizontalDragUpdate,
+      onHorizontalDragEnd: _horizontalDragEnd,
+      child: AnimatedBuilder(
+        animation: controller,
+        builder: (con, c) {
+          return ClipPath(
+            clipper: MyClipper(animation.value),
+            child: Container(
+              height: height,
+              width: width,
+              color: widget.color,
+            ),
+          );
+        },
       ),
     );
   }
 
+  void _horizontalDragStart(DragStartDetails details) {
+    startDragX = details.globalPosition.dx;
+    startDragPercent = sliderPercent;
+  }
+
+  void _horizontalDragUpdate(DragUpdateDetails details) {
+    final distance = startDragX - details.globalPosition.dx;
+    final sliderWidth = widget.mSize.width;
+    final mDragPercent = distance / sliderWidth;
+
+    setState(() {
+      sliderPercent = startDragPercent + mDragPercent * details.globalPosition.distance/1.5;
+    });
+  }
+
+  void _horizontalDragEnd(DragEndDetails details) {
+      startDragX = null;
+      startDragPercent = null;
+
+        setState(() {
+          controller.forward();
+        });
+
+  }
 }
 
 class MyClipper extends CustomClipper<Path> {
+  final double sliderPercent;
 
-  final double dragPercent;
-
-  MyClipper(this.dragPercent);
+  MyClipper(this.sliderPercent);
 
   @override
   Path getClip(Size size) {
@@ -92,9 +143,15 @@ class MyClipper extends CustomClipper<Path> {
 
     // colored background
     path.addRect(
-        Rect.fromLTRB(size.width-dragPercent, size.height, size.width, 0)
+        Rect.fromLTRB(
+          size.width - sliderPercent,
+          0, 
+          size.width,
+          size.height
+        ),
     );
-    
+
+    path.close();
     return path;
   }
 
