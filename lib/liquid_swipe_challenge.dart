@@ -22,6 +22,16 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
+
+  Widget _buildChild(){
+    return Text('Liquid Swipe',
+      style: TextStyle(
+          fontSize: 36,
+        color: Colors.white
+      ),
+    );
+  }
+
   @override
   void initState() {
     SystemChrome.setEnabledSystemUIOverlays([]);
@@ -33,7 +43,13 @@ class HomePageState extends State<HomePage> {
     return Scaffold(
       body: Stack(
         children: <Widget>[
-          CustomContainer(Colors.purple, MediaQuery.of(context).size),
+          CustomContainer(
+              MediaQuery.of(context).size,
+              Container(
+                color: Colors.purple,
+                child: Center(child: _buildChild(),),
+              )
+          ),
           //CustomContainer( Colors.orange),
         ],
       ),
@@ -42,10 +58,10 @@ class HomePageState extends State<HomePage> {
 }
 
 class CustomContainer extends StatefulWidget {
-  final Color color;
   final Size mSize;
+  final Widget child;
 
-  CustomContainer(this.color, this.mSize);
+  CustomContainer(this.mSize, this.child);
 
   @override
   State<StatefulWidget> createState() {
@@ -95,11 +111,7 @@ class CustomContainerState
         builder: (con, c) {
           return ClipPath(
             clipper: MyClipper(animation.value),
-            child: Container(
-              height: height,
-              width: width,
-              color: widget.color,
-            ),
+            child: widget.child,
           );
         },
       ),
@@ -117,7 +129,8 @@ class CustomContainerState
     final mDragPercent = distance / sliderWidth;
 
     setState(() {
-      sliderPercent = startDragPercent + mDragPercent * details.globalPosition.distance/1.5;
+      sliderPercent = startDragPercent + mDragPercent *
+          details.globalPosition.distance/1.5;
     });
   }
 
