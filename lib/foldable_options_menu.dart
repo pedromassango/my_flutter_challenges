@@ -90,9 +90,9 @@ class _FoldableOptionsState
 
   Animation<Alignment> firstAnim;
   Animation<Alignment> secondAnim;
-  Animation<Alignment> thirthAnim;
+  Animation<Alignment> thirdAnim;
   Animation<Alignment> fourthAnim;
-  Animation<Alignment> fivethAnim;
+  Animation<Alignment> fifthAnim;
   Animation<double> verticalPadding;
   AnimationController controller;
   final duration = Duration(milliseconds: 270);
@@ -143,9 +143,9 @@ class _FoldableOptionsState
     final anim = CurvedAnimation(parent: controller, curve: Curves.linear);
     firstAnim = Tween<Alignment>(begin: Alignment.centerRight, end: Alignment.topRight).animate( anim);
     secondAnim = Tween<Alignment>(begin: Alignment.centerRight, end: Alignment.topLeft).animate( anim);
-    thirthAnim = Tween<Alignment>(begin: Alignment.centerRight, end: Alignment.centerLeft).animate( anim);
+    thirdAnim = Tween<Alignment>(begin: Alignment.centerRight, end: Alignment.centerLeft).animate( anim);
     fourthAnim = Tween<Alignment>(begin: Alignment.centerRight, end: Alignment.bottomLeft).animate( anim);
-    fivethAnim = Tween<Alignment>(begin: Alignment.centerRight, end: Alignment.bottomRight).animate( anim);
+    fifthAnim = Tween<Alignment>(begin: Alignment.centerRight, end: Alignment.bottomRight).animate( anim);
     verticalPadding = Tween<double>(begin: 0, end: 26).animate( anim);
 
   }
@@ -170,7 +170,7 @@ class _FoldableOptionsState
                       child: getItem(options.elementAt(1)))
               ),
 
-              Align(alignment: thirthAnim.value, child: getItem(options.elementAt(2))),
+              Align(alignment: thirdAnim.value, child: getItem(options.elementAt(2))),
               Align(alignment: fourthAnim.value,
                     child: Container(
                       padding: EdgeInsets.only(left: 50, bottom: verticalPadding.value),
@@ -178,7 +178,7 @@ class _FoldableOptionsState
                     )
               ),
 
-              Align(alignment: fivethAnim.value, child: getItem(options.elementAt(4))),
+              Align(alignment: fifthAnim.value, child: getItem(options.elementAt(4))),
 
               Align(
                 alignment: Alignment.centerRight,
