@@ -23,9 +23,9 @@ Youtube playlist about Flutter: https://www.youtube.com/playlist?list=PLum90SMJW
 | <img src="/screenshots/slidl.gif" width="270" height="480"> | <img src="/screenshots/navy2.gif" width="270" height="480"> |
 
 
-| Mobile Dashboard |
-| ------------- |
-| <img src="/screenshots/dashboard.png" width="270" height="480"> |
+| Mobile Dashboard | Foldable Options Menu |
+| ------------- | ------------------------ |
+| <img src="/screenshots/dashboard.png" width="270" height="480"> | <img src="/screenshots/options_menu.gif" width="270" height="480"> |
 
 
 ## Getting Started
