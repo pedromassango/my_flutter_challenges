@@ -1,4 +1,3 @@
-import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
 
 void main()=> runApp(MyApp());
@@ -18,10 +17,6 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-
-
-
-
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
@@ -35,50 +30,18 @@ class _HomePageState extends State<HomePage> {
             alignment: Alignment.centerRight,
             child: FoldableOptions(),
           ),
-
-
         ],
-      ),
-      bottomNavigationBar: BottomNavyBar(
-        onItemSelected: (i){},
-          items: [
-            BottomNavyBarItem(
-              icon: Icon(Icons.apps),
-              title: Text('Home'),
-              activeColor: Colors.red,
-            ),
-            BottomNavyBarItem(
-                icon: Icon(Icons.people),
-                title: Text('Users'),
-                activeColor: Colors.green
-            ),
-            BottomNavyBarItem(
-                icon: Icon(Icons.message),
-                title: Text('Messages'),
-                activeColor: Colors.deepPurple
-            ),
-            BottomNavyBarItem(
-                icon: Icon(Icons.settings),
-                title: Text('Settings'),
-                activeColor: Colors.blue
-            ),
-          ]
       ),
     );
   }
 }
-
-
-
 
 class FoldableOptions extends StatefulWidget {
   @override
   _FoldableOptionsState createState() => _FoldableOptionsState();
 }
 
-class _FoldableOptionsState
-    extends State<FoldableOptions>
-    with SingleTickerProviderStateMixin{
+class _FoldableOptionsState extends State<FoldableOptions> with SingleTickerProviderStateMixin{
 
   final List<IconData> options =[
     Icons.folder,
@@ -96,7 +59,6 @@ class _FoldableOptionsState
   Animation<double> verticalPadding;
   AnimationController controller;
   final duration = Duration(milliseconds: 270);
-
 
   Widget getItem(IconData source){
     final size = 40.0;
@@ -147,12 +109,10 @@ class _FoldableOptionsState
     fourthAnim = Tween<Alignment>(begin: Alignment.centerRight, end: Alignment.bottomLeft).animate( anim);
     fifthAnim = Tween<Alignment>(begin: Alignment.centerRight, end: Alignment.bottomRight).animate( anim);
     verticalPadding = Tween<double>(begin: 0, end: 26).animate( anim);
-
   }
 
   @override
   Widget build(BuildContext context) {
-
     return Container(
       width: 150,
       height: 200,
@@ -177,18 +137,12 @@ class _FoldableOptionsState
                       child: getItem(options.elementAt(3)),
                     )
               ),
-
               Align(alignment: fifthAnim.value, child: getItem(options.elementAt(4))),
-
               Align(
                 alignment: Alignment.centerRight,
                 child: GestureDetector(
                     onTap: (){
-                      if(controller.isCompleted){
-                        controller.reverse();
-                      }else{
-                        controller.forward();
-                      }
+                      controller.isCompleted ? controller.reverse() : controller.forward();
                     },
                     child: buildPrimaryItem(controller.isCompleted || controller.isAnimating? Icons.close : Icons.add)),
               )
