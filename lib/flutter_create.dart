@@ -103,36 +103,6 @@ class _SlidingContainerState
     );
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
 enum Position{
