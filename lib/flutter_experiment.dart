@@ -19,6 +19,12 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
+  List<SlidingContainer> pages =[
+    SlidingContainer(color: Colors.black, child: Container(), show: true,),
+    SlidingContainer(color: Colors.deepOrange, child: Container(),),
+    SlidingContainer(color: Colors.blue, child: Container(),),
+    SlidingContainer(color: Colors.deepPurple, child: Container(),),
+  ];
 
   @override
   void initState() {
@@ -26,17 +32,18 @@ class _HomePageState extends State<HomePage> {
 
   }
 
-
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
-    final height = MediaQuery.of(context).size.height;
 
     return Scaffold(
       body: Stack(
-        children: <Widget>[
-          SlidingContainer(color: Colors.black, child: Container(),)
-        ],
+        children: pages.map((page){
+          return SlidingContainer(
+            color: page.color,
+            child: page.child,
+            pages: pages,
+          );
+        }).toList(),
       )
     );
   }
@@ -45,11 +52,21 @@ class _HomePageState extends State<HomePage> {
 class SlidingContainer extends StatefulWidget {
   final Widget child;
   final Color color;
+  final bool show;
+  final List<SlidingContainer> pages;
 
-  const SlidingContainer({Key key,this.color, this.child}) : super(key: key);
+  SlidingContainer({
+    Key key,
+    this.color,
+    this.child,
+    this.pages,
+    this.show
+  }) : super(key: key);
 
   @override
-  _SlidingContainerState createState() => _SlidingContainerState();
+  _SlidingContainerState createState() => _SlidingContainerState(
+    show: show
+  );
 }
 
 class _SlidingContainerState
@@ -59,10 +76,19 @@ class _SlidingContainerState
   double radialPercent = 20;
   Animation<Offset> radiusAnimation;
   AnimationController controller;
+  bool _show;
+  final bool show;
+
+  _SlidingContainerState({this.show});
 
   @override
   void initState() {
     super.initState();
+    if(show == true){
+      _show = true;
+    }else{
+      _show = false;
+    }
 
     controller = AnimationController(
       vsync: this,
@@ -70,6 +96,8 @@ class _SlidingContainerState
     );
 
   }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -82,23 +110,26 @@ class _SlidingContainerState
     ).animate(CurvedAnimation(parent: controller, curve: Curves.linear)
     );
 
-    return GestureDetector(
-      onTap: (){
-        setState(() {
-          controller.forward();
-        });
-      },
-      child: AnimatedBuilder(
-        animation: controller,
-        builder: (context, child){
-          return ClipPath(
-            clipper: MyClipper(radiusAnimation.value, Position.TOP_CENTER),
-            child: Container(
-              child: widget.child,
-              color: widget.color,
-            ),
-          );
+    return Visibility(
+      visible: _show,
+      child: GestureDetector(
+        onTap: (){
+          setState(() {
+            controller.forward();
+          });
         },
+        child: AnimatedBuilder(
+          animation: controller,
+          builder: (context, child){
+            return ClipPath(
+              clipper: MyClipper(radiusAnimation.value, Position.BOTTOM_RIGHT),
+              child: Container(
+                child: widget.child,
+                color: widget.color,
+              ),
+            );
+          },
+        ),
       ),
     );
   }
@@ -106,7 +137,7 @@ class _SlidingContainerState
 }
 
 enum Position{
-  TOP_CENTER, BOTTOM_CENTER
+  TOP_CENTER, BOTTOM_CENTER, BOTTOM_RIGHT
 }
 
 class MyClipper extends CustomClipper<Path>{
@@ -127,9 +158,12 @@ class MyClipper extends CustomClipper<Path>{
     if(position == Position.BOTTOM_CENTER) {
       var bottomCenter = Offset(size.width /2, size.height - defaultMargin);
       p.addOval(Rect.fromCircle(center: bottomCenter, radius: radius));
-    }else{
+    }else if(position == Position.TOP_CENTER){
       var topCenter = Offset(size.width /2, 0);
       p.addOval(Rect.fromCircle(center: topCenter, radius: radius));
+    }else if(position == Position.BOTTOM_RIGHT){
+      var bottomRight = Offset(size.width, size.height);
+      p.addOval(Rect.fromCircle(center: bottomRight, radius: radius));
     }
 
     return p;
