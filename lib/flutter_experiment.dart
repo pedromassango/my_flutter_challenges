@@ -111,7 +111,7 @@ class _SlidingContainerState
     );
 
     return Visibility(
-      visible: _show,
+      visible: true,
       child: GestureDetector(
         onTap: (){
           setState(() {
