@@ -123,7 +123,7 @@ class _GMenuState extends State<GMenu> {
       width: 50,
       height: 50,
       decoration: BoxDecoration(
-          color: Colors.red,
+          color: Colors.white,
           borderRadius: BorderRadius.all(Radius.circular(50)),
         boxShadow: [
           BoxShadow(
@@ -186,35 +186,44 @@ class _GDialogState extends State<GDialog> {
             children: <Widget>[
               Hero(
                 tag: '1',
-                child: Container(
-                  color: Colors.orange,
-                  width: double.maxFinite,
-                  height: 50,
-                  child: Center(
-                    child: Text("Settings"),
+                child: Material(
+                  color: Colors.transparent,
+                  child: Container(
+                    color: Colors.orange,
+                    width: double.maxFinite,
+                    height: 50,
+                    child: Center(
+                      child: Text("Settings"),
+                    ),
                   ),
                 ),
               ),
               Hero(
                 tag: '2',
-                child: Container(
-                  margin: EdgeInsets.only(top: 20, bottom: 20),
-                  color: Colors.blue,
-                  width: double.maxFinite,
-                  height: 50,
-                  child: Center(
-                    child: Text("Messages"),
+                child: Material(
+                  color: Colors.transparent,
+                  child: Container(
+                    margin: EdgeInsets.only(top: 20, bottom: 20),
+                    color: Colors.blue,
+                    width: double.maxFinite,
+                    height: 50,
+                    child: Center(
+                      child: Text("Messages"),
+                    ),
                   ),
                 ),
               ),
               Hero(
                 tag: '3',
-                child: Container(
-                  color: Colors.green,
-                  width: double.maxFinite,
-                  height: 50,
-                  child: Center(
-                    child: Text("New Post"),
+                child: Material(
+                  color: Colors.transparent,
+                  child: Container(
+                    color: Colors.green,
+                    width: double.maxFinite,
+                    height: 50,
+                    child: Center(
+                      child: Text("New Post"),
+                    ),
                   ),
                 ),
               ),
