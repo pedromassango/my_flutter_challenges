@@ -1,6 +1,6 @@
 # My Flutter Challenges
 
-A new Flutter project containing all my flutter UI challenges. 
+A new Flutter project containing all my flutter UI challenges. You can find the source code of all challenges in the [/lib](https://github.com/pedromassango/my_flutter_challenges/tree/master/lib) folder. Or just click on the title of each challenge to see the source.
 
 Youtube playlist about Flutter: https://www.youtube.com/playlist?list=PLum90SMJW-vltQ_ERf3rhjq_UZWJ2enEG
 
@@ -9,15 +9,15 @@ Youtube playlist about Flutter: https://www.youtube.com/playlist?list=PLum90SMJW
 
 ## Screenshots
 
-| Sliding Login & Register | Bottom Navy Bar |
+| [Sliding Login & Register](https://github.com/pedromassango/my_flutter_challenges/blob/master/lib/sliding_login.dart) | [Bottom Navy Bar](https://github.com/pedromassango/bottom_navy_bar) |
 | ------------- | ------------- |
 | <img src="/screenshots/slidl.gif" width="270" height="480"> | <img src="/screenshots/navy2.gif" width="270" height="480"> |
 
-| Custom Drawer | Foldable Options Menu |
+| [Custom Drawer](https://github.com/pedromassango/flutter_delivery) | [Foldable Options Menu](https://github.com/pedromassango/my_flutter_challenges/blob/master/lib/foldable_options_menu.dart) |
 | ------------- | ------------------------ |
 | <img src="/screenshots/delivery.gif" width="270" height="480"> | <img src="/screenshots/options_menu.gif" width="270" height="480"> |
 
-| Titled Bottom Navigation Bar | Mobile Dashboard |
+| [Titled Bottom Navigation Bar](https://github.com/pedromassango/titled_navigation_bar) | [Mobile Dashboard](https://github.com/pedromassango/my_flutter_challenges/blob/master/lib/mobile_dashboard.dart) |
 | ------------- | ------------- |
 | <img src="/screenshots/titled_bottom_bar.gif" width="270" height="480"> | <img src="/screenshots/dashboard.png" width="270" height="480"> |
 
@@ -25,7 +25,7 @@ Youtube playlist about Flutter: https://www.youtube.com/playlist?list=PLum90SMJW
 | ----- | ------- |
 | <img src="/screenshots/login.png" width="270" height="480"> | <img src="/screenshots/profile.png" width="270" height="480">|
 
-| Home screen |
+| [Home screen](https://github.com/pedromassango/flutter_famguard) |
 | ------------- |
 | <img src="/screenshots/home.png" width="270" height="480"> |
 
