@@ -9,27 +9,25 @@ Youtube playlist about Flutter: https://www.youtube.com/playlist?list=PLum90SMJW
 
 ## Screenshots
 
-| Login | Profile |
-| ----- | ------- |
-| <img src="/screenshots/login.png" width="270" height="480"> | <img src="/screenshots/profile.png" width="270" height="480">|
-
-| Custom Drawer | Home screen |
-| ------------- | ------------|
-| <img src="/screenshots/delivery.gif" width="270" height="480"> | <img src="/screenshots/home.png" width="270" height="480">|
-
-
 | Sliding Login & Register | Bottom Navy Bar |
 | ------------- | ------------- |
 | <img src="/screenshots/slidl.gif" width="270" height="480"> | <img src="/screenshots/navy2.gif" width="270" height="480"> |
 
-
-| Mobile Dashboard | Foldable Options Menu |
+| Custom Drawer | Foldable Options Menu |
 | ------------- | ------------------------ |
-| <img src="/screenshots/dashboard.png" width="270" height="480"> | <img src="/screenshots/options_menu.gif" width="270" height="480"> |
+| <img src="/screenshots/delivery.gif" width="270" height="480"> | <img src="/screenshots/options_menu.gif" width="270" height="480"> |
 
-| Titled Bottom Navigation Bar |
+| Titled Bottom Navigation Bar | Mobile Dashboard |
+| ------------- | ------------- |
+| <img src="/screenshots/titled_bottom_bar.gif" width="270" height="480"> | <img src="/screenshots/dashboard.png" width="270" height="480"> |
+
+| Login | Profile |
+| ----- | ------- |
+| <img src="/screenshots/login.png" width="270" height="480"> | <img src="/screenshots/profile.png" width="270" height="480">|
+
+| Home screen |
 | ------------- |
-| <img src="/screenshots/titled_bottom_bar.gif" width="270" height="480"> |
+| <img src="/screenshots/home.png" width="270" height="480"> |
 
 
 ## Getting Started
