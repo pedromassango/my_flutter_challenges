@@ -29,7 +29,7 @@ Youtube playlist about Flutter: https://www.youtube.com/playlist?list=PLum90SMJW
 
 | Titled Bottom Navigation Bar |
 | ------------- |
-| <img src="/screenshots/titled_bottom_bar.gif" width="1000" height="500"> |
+| <img src="/screenshots/titled_bottom_bar.gif" width="270" height="480"> |
 
 
 ## Getting Started
