@@ -139,7 +139,7 @@ class CustomContainerState
       startDragPercent = null;
 
         setState(() {
-          controller.forward();
+          //controller.forward();
         });
 
   }
