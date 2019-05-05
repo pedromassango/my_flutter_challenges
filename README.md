@@ -25,9 +25,9 @@ Youtube playlist about Flutter: https://www.youtube.com/playlist?list=PLum90SMJW
 | ----- | ------- |
 | <img src="/screenshots/login.png" width="270" height="480"> | <img src="/screenshots/profile.png" width="270" height="480">|
 
-| [Home screen](https://github.com/pedromassango/flutter_famguard) |
-| ------------- |
-| <img src="/screenshots/home.png" width="270" height="480"> |
+| [Home screen](https://github.com/pedromassango/flutter_famguard) | [Number Picker](https://github.com/pedromassango/slider_number_picker) |
+| ------------- | ------------- |
+| <img src="/screenshots/home.png" width="270" height="480"> | <img src="https://github.com/pedromassango/slider_number_picker/blob/master/preview/shot.gif" width="270" height="480"> |
 
 
 ## Getting Started
