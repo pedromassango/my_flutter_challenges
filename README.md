@@ -23,13 +23,10 @@ Youtube playlist about Flutter: https://www.youtube.com/playlist?list=PLum90SMJW
 | ----- | ------- | ------------- |
 | <img src="/screenshots/login.png" width="270" height="480"> | <img src="/screenshots/profile.png" width="270" height="480">| <img src="/screenshots/home.png" width="270" height="480"> |
 
-| [Number Picker](https://github.com/pedromassango/slider_number_picker) |
-| ------------- |
-| <img src="https://github.com/pedromassango/slider_number_picker/blob/master/preview/shot.gif" width="270" height="480"> |
+| [Number Picker](https://github.com/pedromassango/slider_number_picker) | Profile Design |
+| ------------- | ----- |
+| <img src="https://github.com/pedromassango/slider_number_picker/blob/master/preview/shot.gif" width="270" height="480"> | <img src="/screenshots/profile_design.png" width="270" height="480"> |
 
-| Profile Design |
-| ----- |
-| <img src="/screenshots/profile_design.png" width="270" height="480"> |
 
 
 ## Getting Started
