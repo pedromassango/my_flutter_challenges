@@ -9,13 +9,13 @@ Youtube playlist about Flutter: https://www.youtube.com/playlist?list=PLum90SMJW
 
 ## Screenshots
 
-| [Sliding Login & Register](https://github.com/pedromassango/my_flutter_challenges/blob/master/lib/sliding_login.dart) | [Bottom Navy Bar](https://github.com/pedromassango/bottom_navy_bar) |
-| ------------- | ------------- |
-| <img src="/screenshots/slidl.gif" width="270" height="480"> | <img src="/screenshots/navy2.gif" width="270" height="480"> |
+| [Sliding Login & Register](https://github.com/pedromassango/my_flutter_challenges/blob/master/lib/sliding_login.dart) | [Bottom Navy Bar](https://github.com/pedromassango/bottom_navy_bar) | [Custom Drawer](https://github.com/pedromassango/flutter_delivery) |
+| ------------- | ------------- | ------------- |
+| <img src="/screenshots/slidl.gif" width="270" height="480"> | <img src="/screenshots/navy2.gif" width="270" height="480"> | <img src="/screenshots/delivery.gif" width="270" height="480"> |
 
-| [Custom Drawer](https://github.com/pedromassango/flutter_delivery) | [Foldable Options Menu](https://github.com/pedromassango/my_flutter_challenges/blob/master/lib/foldable_options_menu.dart) |
-| ------------- | ------------------------ |
-| <img src="/screenshots/delivery.gif" width="270" height="480"> | <img src="/screenshots/options_menu.gif" width="270" height="480"> |
+| [Foldable Options Menu](https://github.com/pedromassango/my_flutter_challenges/blob/master/lib/foldable_options_menu.dart) |
+| ------------- |
+| <img src="/screenshots/options_menu.gif" width="270" height="480"> |
 
 | [Titled Bottom Navigation Bar](https://github.com/pedromassango/titled_navigation_bar) | [Mobile Dashboard](https://github.com/pedromassango/my_flutter_challenges/blob/master/lib/mobile_dashboard.dart) |
 | ------------- | ------------- |
