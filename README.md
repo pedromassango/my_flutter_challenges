@@ -19,13 +19,13 @@ Youtube playlist about Flutter: https://www.youtube.com/playlist?list=PLum90SMJW
 | ------------- | ------------- | ------------- |
 | <img src="/screenshots/titled_bottom_bar.gif" width="270" height="480"> | <img src="/screenshots/dashboard.png" width="270" height="480"> | <img src="/screenshots/options_menu.gif" width="270" height="480"> |
 
-| Login | Profile |
-| ----- | ------- |
-| <img src="/screenshots/login.png" width="270" height="480"> | <img src="/screenshots/profile.png" width="270" height="480">|
+| Login | Profile | [Home screen](https://github.com/pedromassango/flutter_famguard) |
+| ----- | ------- | ------------- |
+| <img src="/screenshots/login.png" width="270" height="480"> | <img src="/screenshots/profile.png" width="270" height="480">| <img src="/screenshots/home.png" width="270" height="480"> |
 
-| [Home screen](https://github.com/pedromassango/flutter_famguard) | [Number Picker](https://github.com/pedromassango/slider_number_picker) |
-| ------------- | ------------- |
-| <img src="/screenshots/home.png" width="270" height="480"> | <img src="https://github.com/pedromassango/slider_number_picker/blob/master/preview/shot.gif" width="270" height="480"> |
+| [Number Picker](https://github.com/pedromassango/slider_number_picker) |
+| ------------- |
+| <img src="https://github.com/pedromassango/slider_number_picker/blob/master/preview/shot.gif" width="270" height="480"> |
 
 | Profile Design |
 | ----- |
