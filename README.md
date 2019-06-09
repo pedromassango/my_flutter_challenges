@@ -1,6 +1,6 @@
 # My Flutter Challenges
 
-A new Flutter project containing all my flutter UI challenges. You can find the source code of all challenges in the [/lib](https://github.com/pedromassango/my_flutter_challenges/tree/master/lib) folder. Or just click on the title of each challenge to see the source.
+A new Flutter project containing all my flutter UI challenges. You can find the source code of all challenges in the [/lib](https://github.com/pedromassango/my_flutter_challenges/tree/master/lib) folder. Or just click on the title of each challenge to see the source code of each image.
 
 Youtube playlist about Flutter: https://www.youtube.com/playlist?list=PLum90SMJW-vltQ_ERf3rhjq_UZWJ2enEG
 
@@ -19,11 +19,11 @@ Youtube playlist about Flutter: https://www.youtube.com/playlist?list=PLum90SMJW
 | ------------- | ------------- | ------------- |
 | <img src="/screenshots/titled_bottom_bar.gif" width="270" height="480"> | <img src="/screenshots/dashboard.png" width="270" height="480"> | <img src="/screenshots/options_menu.gif" width="270" height="480"> |
 
-| Login | Profile | [Home screen](https://github.com/pedromassango/flutter_famguard) |
+| [Login](https://github.com/pedromassango/my_flutter_challenges/blob/master/lib/login_challenge.dart) | [Profile](https://github.com/pedromassango/my_flutter_challenges/blob/master/lib/profile_challenge.dart) | [Home screen](https://github.com/pedromassango/flutter_famguard) |
 | ----- | ------- | ------------- |
 | <img src="/screenshots/login.png" width="270" height="480"> | <img src="/screenshots/profile.png" width="270" height="480">| <img src="/screenshots/home.png" width="270" height="480"> |
 
-| [Number Picker](https://github.com/pedromassango/slider_number_picker) | Profile Design |
+| [Number Picker](https://github.com/pedromassango/slider_number_picker) | [Profile Design](https://github.com/pedromassango/my_flutter_challenges/blob/master/lib/profile_design.dart) |
 | ------------- | ----- |
 | <img src="https://github.com/pedromassango/slider_number_picker/blob/master/preview/shot.gif" width="270" height="480"> | <img src="/screenshots/profile_design.png" width="270" height="480"> |
 
