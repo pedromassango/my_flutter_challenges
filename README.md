@@ -27,10 +27,6 @@ Youtube playlist about Flutter: https://www.youtube.com/playlist?list=PLum90SMJW
 | ------------- | ----- | ----- |
 | <img src="https://github.com/pedromassango/slider_number_picker/blob/master/preview/shot.gif" width="270" height="480"> | <img src="/screenshots/profile_design.png" width="270" height="480"> | <img src="/screenshots/world_clock.png" width="270" height="480"> |
 
-| Profile Design | World Clock |
-| ----- | ----- |
-| <img src="/screenshots/profile_design.png" width="270" height="480"> |
-
 
 ## Getting Started
 
