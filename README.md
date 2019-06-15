@@ -13,7 +13,7 @@ Youtube playlist about Flutter: https://www.youtube.com/playlist?list=PLum90SMJW
 | ------------- | ------------- | ------------- |
 | <img src="/screenshots/slidl.gif" width="270" height="480"> | <img src="/screenshots/navy2.gif" width="270" height="480"> | <img src="/screenshots/delivery.gif" width="270" height="480"> |
 
- 
+
 
 | [Titled Bottom Navigation Bar](https://github.com/pedromassango/titled_navigation_bar) | [Mobile Dashboard](https://github.com/pedromassango/my_flutter_challenges/blob/master/lib/mobile_dashboard.dart) | [Foldable Options Menu](https://github.com/pedromassango/my_flutter_challenges/blob/master/lib/foldable_options_menu.dart) |
 | ------------- | ------------- | ------------- |
@@ -23,10 +23,13 @@ Youtube playlist about Flutter: https://www.youtube.com/playlist?list=PLum90SMJW
 | ----- | ------- | ------------- |
 | <img src="/screenshots/login.png" width="270" height="480"> | <img src="/screenshots/profile.png" width="270" height="480">| <img src="/screenshots/home.png" width="270" height="480"> |
 
-| [Number Picker](https://github.com/pedromassango/slider_number_picker) | [Profile Design](https://github.com/pedromassango/my_flutter_challenges/blob/master/lib/profile_design.dart) |
-| ------------- | ----- |
-| <img src="https://github.com/pedromassango/slider_number_picker/blob/master/preview/shot.gif" width="270" height="480"> | <img src="/screenshots/profile_design.png" width="270" height="480"> |
+| [Number Picker](https://github.com/pedromassango/slider_number_picker) | [Profile Design](https://github.com/pedromassango/my_flutter_challenges/blob/master/lib/profile_design.dart) | World Clock |
+| ------------- | ----- | ----- |
+| <img src="https://github.com/pedromassango/slider_number_picker/blob/master/preview/shot.gif" width="270" height="480"> | <img src="/screenshots/profile_design.png" width="270" height="480"> | <img src="/screenshots/world_clock.png" width="270" height="480"> |
 
+| Profile Design | World Clock |
+| ----- | ----- |
+| <img src="/screenshots/profile_design.png" width="270" height="480"> |
 
 
 ## Getting Started
