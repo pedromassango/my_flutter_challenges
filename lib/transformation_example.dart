@@ -6,10 +6,10 @@ import 'package:flutter/rendering.dart';
 import 'dart:math';
 
 void main() {
-  runApp(MainAppWidget());
+  runApp(MyApp());
 }
 
-class MainAppWidget extends StatelessWidget {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -23,7 +23,216 @@ class MainAppWidget extends StatelessWidget {
 class SplashPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return MyState();
+    return OffsetState();
+  }
+}
+
+class OffsetState extends State<SplashPage>{
+
+  PageController _controller;
+
+  double _index = 0;
+  double iconSize = 40;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = PageController();
+    _controller.addListener((){
+      setState(() {
+        _index = _controller.page;
+      });
+    });
+  }
+
+  Widget _buildIcon(int i, IconData icon){
+    double size = 6;
+
+    if(i == 0 && _index <= 1){
+      size = _index*size;
+    } else if(i == 0 && _index > 1){
+      size = size;
+    }
+
+    if(i == 1 && _index <= 1){
+      size -= _index*size;
+      size = size.isNegative ? 0 : size;
+    }else if(i == 1 && _index > 1){
+      size = --_index*size;
+      size = size.isNegative ? 0 : size;
+    }
+
+    if(i == 2 && _index <= 1){
+      if(i == 2 && _index > 1)
+        size -= _index*size;
+    }else if(i == 2 && _index > 2){
+      size = --_index*size;
+      size = size.isNegative ? 0 : size;
+    }
+
+    print("$_index");
+
+    return AnimatedContainer(
+      width: iconSize,
+      height: iconSize,
+      key: ObjectKey(i),
+      duration: Duration(microseconds: 0),
+      padding: EdgeInsets.all(size),
+      child: Container(
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: Colors.white,
+        ),
+        child: Center(child: Icon(icon, size: iconSize/2,),),
+      ),
+    );
+  }
+
+  Widget _pageOne(){
+    return SizedBox.expand(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        mainAxisSize: MainAxisSize.max,
+        children: <Widget>[
+
+          Icon(Icons.payment, color: Colors.white,
+            size: 120,
+          ),
+          SizedBox(height: 200,),
+          Text("Make Instant Payment by telling your ZAP OTP "
+              "to the Merchant.",
+            style: TextStyle(
+              fontSize: 18,
+              color: Colors.white
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget _pageTwo(){
+    return SizedBox.expand(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        mainAxisSize: MainAxisSize.max,
+        children: <Widget>[
+
+          Icon(Icons.security, color: Colors.white,
+            size: 120,
+          ),
+          SizedBox(height: 200,),
+          Text("Make Instant Payment by telling your ZAP OTP "
+              "to the Merchant.",
+            style: TextStyle(
+              fontSize: 18,
+              color: Colors.white
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget _pageThree(){
+    return SizedBox.expand(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        mainAxisSize: MainAxisSize.max,
+        children: <Widget>[
+
+          Icon(Icons.ac_unit, color: Colors.white,
+            size: 120,
+          ),
+          SizedBox(height: 200,),
+          Text("Make Instant Payment by telling your ZAP OTP "
+              "to the Merchant.",
+            style: TextStyle(
+              fontSize: 18,
+              color: Colors.white
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.deepPurple,
+      body: Stack(
+        children: <Widget>[
+          PageView(
+
+            controller: _controller,
+            children: List.generate(3, (i){
+              return Container(
+                margin: EdgeInsets.only(top: 200),
+                padding: EdgeInsets.all(32),
+                color: Colors.deepPurple,
+                child:  i == 0 ? _pageOne() :
+                  i == 1 ? _pageTwo() : _pageThree(),
+              );
+            }),
+          ),
+
+      Positioned(
+        bottom: _index >= 1 ? _index *0 : _index,
+        child: MaterialButton(
+          onPressed: (){},
+          child: Text("Getting started".toUpperCase()),
+        ),
+      ),
+
+          Align(
+            alignment: Alignment.topCenter,
+            child: Container(
+              margin: EdgeInsets.only(top: 100),
+              height: 50,
+              width: 170,
+              child: Stack(
+                alignment: Alignment.center,
+                children: <Widget>[
+                  Positioned(
+                    left: _index * 180/3,
+                    width: iconSize+8,
+                    height: iconSize+8,
+                    child: Container(
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                              width: 2,
+                              color: Colors.orange
+                          )
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(4, 0, 4, 0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        _buildIcon(0, Icons.home),
+                        _buildIcon(1, Icons.person),
+                        _buildIcon(2, Icons.web),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
+
+        ],
+      ),
+    );
   }
 }
 

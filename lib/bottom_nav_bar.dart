@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 
 void main() => runApp(App());
 
@@ -78,34 +77,6 @@ class HomePageState extends State<HomePage>
           );
         },
           child: GMenu(),
-      ),
-      bottomNavigationBar: BottomNavyBar(
-        onItemSelected: (index) => setState(() {
-            _index = index;
-            _controller.animateTo(_index);
-        }),
-        items: [
-          BottomNavyBarItem(
-            icon: Icon(Icons.apps),
-            title: Text('Home'),
-            activeColor: Colors.red,
-          ),
-          BottomNavyBarItem(
-              icon: Icon(Icons.people),
-              title: Text('Users'),
-              activeColor: Colors.green
-          ),
-          BottomNavyBarItem(
-              icon: Icon(Icons.message),
-              title: Text('Messages'),
-              activeColor: Colors.deepPurple
-          ),
-          BottomNavyBarItem(
-              icon: Icon(Icons.settings),
-              title: Text('Settings'),
-              activeColor: Colors.blue
-          ),
-        ],
       ),
 
     );

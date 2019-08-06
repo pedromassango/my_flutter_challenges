@@ -62,7 +62,8 @@ class _PickerPageState extends State<PickerPage> {
             childCount: 30,
             onSelectedItemChanged: (i){},
             itemBuilder: (c, index){
-              return Text('${(index+1).toString().padLeft(2, "0")}', style: TextStyle(color: Colors.deepPurple, fontSize: 100),);
+              return Text('${(index+1).toString().padLeft(2, "0")}',
+                style: TextStyle(color: Colors.deepPurple, fontSize: 80),);
             },
           ),
         ),
@@ -74,14 +75,11 @@ class _PickerPageState extends State<PickerPage> {
             scrollController: scrollController,
             itemExtent: 100,
             childCount: 30,
-            useMagnifier: true,
-            magnification: 1,
-            offAxisFraction: 1,
             backgroundColor: Colors.white,
-            diameterRatio: 50,
             onSelectedItemChanged: (i){},
             itemBuilder: (c, index){
-              return Text(':${(index+1).toString().padLeft(2, "0")}', style: TextStyle(color: Colors.deepPurple, fontSize: 100),);
+              return Text(':${(index+1).toString().padLeft(2, "0")}',
+                style: TextStyle(color: Colors.deepPurple, fontSize: 80),);
             },
           ),
         ),
