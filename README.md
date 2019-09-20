@@ -4,7 +4,7 @@ A new Flutter project containing all my flutter UI challenges. You can find the 
 
 Youtube playlist about Flutter: https://www.youtube.com/playlist?list=PLum90SMJW-vltQ_ERf3rhjq_UZWJ2enEG
 
-#### :heart: Star :heart: the repo to support the project or :smile:[Follow Me](https://github.com/pedromassango).Thanks!
+#### :heart: Star :heart: the repo to support the project or [Follow Me](https://github.com/pedromassango).Thanks!
 [![Twitter Follow](https://img.shields.io/twitter/follow/pedromassangom.svg?style=social&label=Follow)](https://twitter.com/pedromassangom)
 
 ## Screenshots
