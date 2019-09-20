@@ -10,7 +10,6 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-//final Color bgColor = Color(0xFF142550);
 final Color bgColor = Colors.white;
 
 class _HomePageState extends State<HomePage> {
@@ -47,7 +46,6 @@ class _HomePageState extends State<HomePage> {
         hour = DateTime.now().second.toDouble();
         stopwatch.reset();
       }
-
       setState(() {});
     });
 
@@ -100,9 +98,8 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void dispose() {
-    super.dispose();
-
     stopwatch?.stop();
+    super.dispose();
   }
 
   @override
@@ -251,7 +248,6 @@ class _HomePageState extends State<HomePage> {
 
 enum LineType{ hour, minute, second }
 
-
 class LinesPainter extends CustomPainter{
 
   final Paint linePainter;
@@ -274,13 +270,11 @@ class LinesPainter extends CustomPainter{
     final radius = size.width/2;
 
     List.generate(maxLines, (i){
-
       canvas.drawLine(
         Offset(0,  radius),
         Offset(0, radius - 8),
         linePainter
       );
-
       canvas.rotate(2 * pi / maxLines);
     });
 
@@ -315,7 +309,6 @@ class TimeLinesPainter extends CustomPainter{
 
   @override
   void paint(Canvas canvas, Size size) {
-
     final radius = size.width / 2;
 
     canvas.translate(radius, radius);
