@@ -4,7 +4,7 @@ A new Flutter project containing all my flutter UI challenges. You can find the 
 
 Youtube playlist about Flutter: https://www.youtube.com/playlist?list=PLum90SMJW-vltQ_ERf3rhjq_UZWJ2enEG
 
-#### :heart: Star :heart: the repo to support the project or :smile:[Follow Me](https://github.com/pedromassango).Thanks!
+#### :heart: Star :heart: the repo to support the project or [Follow Me](https://github.com/pedromassango).Thanks!
 [![Twitter Follow](https://img.shields.io/twitter/follow/pedromassangom.svg?style=social&label=Follow)](https://twitter.com/pedromassangom)
 
 ## Screenshots
@@ -23,7 +23,7 @@ Youtube playlist about Flutter: https://www.youtube.com/playlist?list=PLum90SMJW
 | ----- | ------- | ------------- |
 | <img src="/screenshots/login.png" width="270" height="480"> | <img src="/screenshots/profile.png" width="270" height="480">| <img src="/screenshots/home.png" width="270" height="480"> |
 
-| [Number Picker](https://github.com/pedromassango/slider_number_picker) | [Profile Design](https://github.com/pedromassango/my_flutter_challenges/blob/master/lib/profile_design.dart) | World Clock |
+| [Number Picker](https://github.com/pedromassango/slider_number_picker) | [Profile Design](https://github.com/pedromassango/my_flutter_challenges/blob/master/lib/profile_design.dart) | [World Clock](https://github.com/pedromassango/my_flutter_challenges/blob/master/lib/world_clock.dart) |
 | ------------- | ----- | ----- |
 | <img src="https://github.com/pedromassango/slider_number_picker/blob/master/preview/shot.gif" width="270" height="480"> | <img src="/screenshots/profile_design.png" width="270" height="480"> | <img src="/screenshots/world_clock.png" width="270" height="480"> |
 
