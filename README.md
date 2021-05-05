@@ -28,9 +28,9 @@ Youtube playlist about Flutter: https://www.youtube.com/playlist?list=PLum90SMJW
 | <img src="https://github.com/pedromassango/slider_number_picker/blob/master/preview/shot.gif" width="270" height="480"> | <img src="/screenshots/profile_design.png" width="270" height="480"> | <img src="/screenshots/world_clock.png" width="270" height="480"> |
 
 
-| [Coffee App - Auth Page](https://github.com/pedromassango/my_flutter_challenges/blob/master/lib/coffee_app_auth.dart) | Sushi app UI/UX |
-| ------------- | ------------- |
-| <img src="/screenshots/coffee_app_auth_page.gif" width="270" height="480"> | <img src="/screenshots/sushi_ui.gif" width="270" height="480">
+| [Coffee App - Auth Page](https://github.com/pedromassango/my_flutter_challenges/blob/master/lib/coffee_app_auth.dart) | Sushi app UI/UX | Ticket Booking |
+| ------------- | ------------- | ------------- |
+| <img src="/screenshots/coffee_app_auth_page.gif" width="270" height="480"> | <img src="/screenshots/sushi_ui.gif" width="270" height="480"> | <img src="/screenshots/ticket_booking.gif" width="270" height="480"> |
 
 ## Getting Started
 
