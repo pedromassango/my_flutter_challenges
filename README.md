@@ -41,6 +41,10 @@ Make sure do improve the code before using it.
 | ------------- | ------------- | ------------- |
 | <img src="/screenshots/coffee_app_auth_page.gif" width="270" height="480"> | <img src="/screenshots/sushi_ui.gif" height="480"> | <img src="/screenshots/ticket_booking.gif" height="480"> |
 
+| [Bank App UI](https://github.com/pedromassango/my_flutter_challenges/blob/master/lib/banking_app.dart)
+| ------------- |
+| <img src="/screenshots/bank_app_ui.gif"> |
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.

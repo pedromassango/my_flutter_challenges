@@ -1,4 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_challenges/coffee_app_auth.dart';
 
-void main() => runApp(MyApp());
+import 'banking_app.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: BankApp(),
+    ),
+  );
+}

@@ -20,6 +20,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
   bottom_navy_bar: ^2.2.0
+  fl_chart: ^0.36.2
 
 dev_dependencies:
   flutter_test:
