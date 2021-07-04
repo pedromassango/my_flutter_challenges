@@ -43,7 +43,7 @@ Make sure do improve the code before using it.
 
 | [Bank App UI](https://github.com/pedromassango/my_flutter_challenges/blob/master/lib/banking_app.dart)
 | ------------- |
-| <img src="/screenshots/bank_app_ui.gif"> |
+| <img src="/screenshots/bank_app_ui.gif" height="480"> |
 
 ## Getting Started
 
