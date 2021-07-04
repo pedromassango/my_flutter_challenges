@@ -7,10 +7,14 @@ A new Flutter project containing all my flutter UI challenges.
 You just click on the title of each challenge, and it will show you the complete code.
 Each challenge is self-contained in a single `.dart` file, so you can just copy/paste and run it.
 
-YouTube playlist about Flutter: https://www.youtube.com/playlist?list=PLum90SMJW-vltQ_ERf3rhjq_UZWJ2enEG
+YouTube playlists about Flutter: https://www.youtube.com/playlist?list=PLum90SMJW-vltQ_ERf3rhjq_UZWJ2enEG
 
 #### :heart: Star :heart: the repo to support the project or [Follow Me](https://github.com/pedromassango).Thanks!
 [![Twitter Follow](https://img.shields.io/twitter/follow/pedromassangom.svg?style=social&label=Follow)](https://twitter.com/pedromassangom)
+
+### Warning
+All the code in this repository are mean for demo only and are not optmized. 
+Make sure do improve the code before using it.
 
 ## Screenshots
 
