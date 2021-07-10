@@ -151,11 +151,7 @@ class _BankAppState extends State<BankApp>
             height: 200,
             child: AnimatedBuilder(
               animation: _controller,
-              child: GestureDetector(
-                  onTap: _openCloseCard,
-                  child: _Card(),
-              ),
-              builder: (context, child) {
+              builder: (context, _) {
                 return PageView.builder(
                   itemCount: cards,
                   controller: _pageController,
@@ -164,7 +160,7 @@ class _BankAppState extends State<BankApp>
                       ? NeverScrollableScrollPhysics()
                       : BouncingScrollPhysics(),
                   itemBuilder: (context, i) {
-                    if (_getCardIndex() != i) return child!;
+                    if (_getCardIndex() != i) return _Card();
                     return Transform.rotate(
                       angle: _rotation.value * math.pi / 180,
                       alignment: Alignment.lerp(
@@ -172,7 +168,7 @@ class _BankAppState extends State<BankApp>
                         Alignment(-.7, -.6),
                         _controller.value,
                       ),
-                      child: child,
+                      child: _Card(),
                     );
                   },
                 );
