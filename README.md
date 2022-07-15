@@ -18,6 +18,10 @@ Make sure do improve the code before using it.
 
 ## Screenshots
 
+| [Bank App UI](https://github.com/pedromassango/my_flutter_challenges/blob/master/lib/banking_app.dart) | [Sushi app UI/UX](https://github.com/pedromassango/my_flutter_challenges/blob/master/lib/sushi_order.dart) | [Ticket Booking](https://github.com/pedromassango/my_flutter_challenges/blob/master/lib/ticket_booking.dart) |
+| ------------- | ------------- | ------------- |
+| <img src="/screenshots/bank_app_ui.gif" height="480"> | <img src="/screenshots/sushi_ui.gif" height="480"> | <img src="/screenshots/ticket_booking.gif" height="480"> |
+
 | [Sliding Login & Register](https://github.com/pedromassango/my_flutter_challenges/blob/master/lib/sliding_login.dart) | [Bottom Navy Bar](https://github.com/pedromassango/bottom_navy_bar) | [Custom Drawer](https://github.com/pedromassango/flutter_delivery) |
 | ------------- | ------------- | ------------- |
 | <img src="/screenshots/slidl.gif" width="270" height="480"> | <img src="/screenshots/navy2.gif" width="270" height="480"> | <img src="/screenshots/delivery.gif" width="270" height="480"> |
@@ -36,14 +40,9 @@ Make sure do improve the code before using it.
 | ------------- | ----- | ----- |
 | <img src="https://github.com/pedromassango/slider_number_picker/blob/master/preview/shot.gif" width="270" height="480"> | <img src="/screenshots/profile_design.png" width="270" height="480"> | <img src="/screenshots/world_clock.png" width="270" height="480"> |
 
-
-| [Coffee App - Auth Page](https://github.com/pedromassango/my_flutter_challenges/blob/master/lib/coffee_app_auth.dart) | [Sushi app UI/UX](https://github.com/pedromassango/my_flutter_challenges/blob/master/lib/sushi_order.dart) | [Ticket Booking](https://github.com/pedromassango/my_flutter_challenges/blob/master/lib/ticket_booking.dart) |
-| ------------- | ------------- | ------------- |
-| <img src="/screenshots/coffee_app_auth_page.gif" width="270" height="480"> | <img src="/screenshots/sushi_ui.gif" height="480"> | <img src="/screenshots/ticket_booking.gif" height="480"> |
-
-| [Bank App UI](https://github.com/pedromassango/my_flutter_challenges/blob/master/lib/banking_app.dart)
+| [Coffee App - Auth Page](/screenshots/coffee_app_auth_page.gif)
 | ------------- |
-| <img src="/screenshots/bank_app_ui.gif" height="480"> |
+| <img src="/screenshots/coffee_app_auth_page.gif" height="480"> |
 
 ## Getting Started
 
